@@ -1,4 +1,19 @@
-import { enableValidation, settings, disableButton } from "./validation.js";
+import "./index.css";
+import {
+  enableValidation,
+  settings,
+  disableButton,
+} from "../scripts/validation.js";
+import logoImage from "./images/Logo.svg";
+import avatarImage from "./images/bessie_coleman.svg";
+import pencilIcon from "./images/pencil.svg";
+import plusIcon from "./images/Plus-icon.svg";
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".header__logo").src = logoImage;
+  document.querySelector(".profile__avatar").src = avatarImage;
+  document.querySelector(".profile__edit-btn img").src = pencilIcon;
+  document.querySelector(".profile__add-btn img").src = plusIcon;
+});
 
 const initialCards = [
   {
@@ -26,6 +41,8 @@ const initialCards = [
     link: "https://images.unsplash.com/photo-1734615106647-937d3996caf2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
+
+
 
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const profileName = document.querySelector(".profile__name");

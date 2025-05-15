@@ -4,15 +4,31 @@ import {
   settings,
   disableButton,
 } from "../scripts/validation.js";
-import logoImage from "./images/Logo.svg";
-import avatarImage from "./images/bessie_coleman.svg";
-import pencilIcon from "./images/pencil.svg";
-import plusIcon from "./images/Plus-icon.svg";
+import logoImage from "../images/Logo.svg";
+import avatarImage from "../images/bessie_coleman.svg";
+import pencilIcon from "../images/pencil.svg";
+import plusIcon from "../images/Plus-icon.svg";
+import Api from "../scripts/Api.js";
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".header__logo").src = logoImage;
   document.querySelector(".profile__avatar").src = avatarImage;
   document.querySelector(".profile__edit-btn img").src = pencilIcon;
   document.querySelector(".profile__add-btn img").src = plusIcon;
+});
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "99c3eb49-a7d6-43c5-b24c-4768ef2993fe",
+    "Content-Type": "application/json",
+  },
+});
+
+api.getInitialCards().then((cards) => {
+  cards.forEach((card) => {
+    const cardEl = getCardElement(card);
+    cardList.append(cardEl);
+  });
 });
 
 const initialCards = [
@@ -41,8 +57,6 @@ const initialCards = [
     link: "https://images.unsplash.com/photo-1734615106647-937d3996caf2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
-
-
 
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const profileName = document.querySelector(".profile__name");

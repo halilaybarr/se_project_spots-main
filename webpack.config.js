@@ -45,7 +45,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|webp)$/,
+        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
         type: "asset/resource",
         generator: {
           filename: "images/[name].[hash][ext]",
@@ -64,7 +64,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      favicon: "./src/pages/images/favicon.ico",
+      favicon: "./src/images/favicon.ico",
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),

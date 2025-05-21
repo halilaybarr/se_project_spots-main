@@ -31,6 +31,14 @@
   background-color: #ffffff;
 }
 
+.modal__delete_container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin-top: 32px;
+}
+
 .modal__container_type_preview {
   padding: 0;
   background: transparent;
@@ -89,6 +97,7 @@
   font-size: 32px;
   line-height: 1;
   color: rgba(33, 33, 33);
+  font-family: Poppins;
 }
 
 .modal__label {
@@ -116,6 +125,21 @@
   border: none;
 }
 
+.modal__delete-btn {
+  width: 156px;
+  height: 52px;
+  padding-top: 18px;
+  padding-right: 32px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  gap: 20px;
+  border-radius: 8px;
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 .modal__input {
   padding: 16px 12px;
   font-weight: 500;
@@ -123,6 +147,7 @@
   line-height: 20px;
   border-radius: 8px;
   border: 1px solid rgba(33, 33, 33, 1);
+  font-family: Poppins;
 }
 
 .modal__input-error {
